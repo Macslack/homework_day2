@@ -11,13 +11,13 @@ stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Ha
 # 1. Add `"Edinburgh Waverley"` to the end of the array
       stops.push("Edinburgh Waverley")
 # 2. Add `"Glasgow Queen St"` to the start of the array
-      stops.shift("Glasgow Queen st")
+      stops.unshift("Glasgow Queen st")
 # 3. Add `"Polmont"` at the appropriate point (between `"Falkirk High"` and `"Linlithgow"`)
       stops.insert(3, "Polmont")
 # 4. Work out the index position of `"Linlithgow"`
       stops.index("Linlithgow")
 # 5. Remove `"Livingston"` from the array using its name
-      stops.unshift("Livingston")
+      stops.delete("Livingston")
 # 6. Delete `"Cumbernauld"` from the array by index
       stops.delete("Cumbernauld")
 # 7. How many stops there are in the array?
@@ -29,11 +29,11 @@ stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Ha
       stops.reverse!
 # 10. Print out all the stops using a for loop
 
-for bus_stops in stops
-    puts bus_stops
-end
+# for bus_stops in stops
+#     puts bus_stops
+# end
 
-p stops
+
 ## Exercise B
 
 ### Given the following data structure:
@@ -97,12 +97,41 @@ users = {
 ### Complete these tasks:
 
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
+     users["Jonathan"][:twitter]
 # 2. Get Erik's hometown
+     users["Erik"][:home_town]
 # 3. Get the array of Erik's lottery numbers
+     users["Erik"][:lottery_numbers]
 # 4. Get the type of Avril's pet Monty
+     users["Avril"][:pets][0][:species]
 # 5. Get the smallest of Erik's lottery numbers
+     users["Erik"][:lottery_numbers][2]
+     users["Erik"][:lottery_numbers].min
 # 6. Return an array of Avril's lottery numbers that are even
+
+
+arr = Array.new
+
+idx = 0
+while idx < users["Avril"][:lottery_numbers].length
+  if users["Avril"][:lottery_numbers][idx] % 2 == 0  # conditional using modulo operator
+    arr.push users["Avril"][:lottery_numbers][idx]       # puts out even number
+  end
+  idx += 1
+end
+
+return arr
+
+
+
+
+
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
+users["Erik"][:lottery_numbers].push(7)
+
+p users["Erik"][:lottery_numbers]
+
+
 # 8. Change Erik's hometown to Edinburgh
 # 9. Add a pet dog to Erik called "Fluffy"
 # 10. Add another person to the users hash

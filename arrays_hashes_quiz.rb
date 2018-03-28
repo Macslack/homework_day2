@@ -110,33 +110,49 @@ users = {
 # 6. Return an array of Avril's lottery numbers that are even
 
 
-arr = Array.new
-
-idx = 0
-while idx < users["Avril"][:lottery_numbers].length
-  if users["Avril"][:lottery_numbers][idx] % 2 == 0  # conditional using modulo operator
-    arr.push users["Avril"][:lottery_numbers][idx]       # puts out even number
-  end
-  idx += 1
-end
-
-return arr
+# arr = Array.new
+#
+# idx = 0
+# while idx < users["Avril"][:lottery_numbers].length
+#   if users["Avril"][:lottery_numbers][idx] % 2 == 0
+#     arr.push users["Avril"][:lottery_numbers][idx]
+#   end
+#   idx += 1
+# end
+#
+# return arr
 
 
 
 
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
-users["Erik"][:lottery_numbers].push(7)
-
-p users["Erik"][:lottery_numbers]
-
+# p users["Erik"][:lottery_numbers].push(7)
 
 # 8. Change Erik's hometown to Edinburgh
+# users["Erik"][:home_town] = "Edinburgh"
+
 # 9. Add a pet dog to Erik called "Fluffy"
+# users["Erik"][:pets] = "Fluffy"
 # 10. Add another person to the users hash
 
+# }
+#
+#   users["Callum"] => {
+#     :twitter => "CazM",
+#     :lottery_numbers => [8, 10, 49, 33, 45, 20],
+#     :home_town => "Glasgow",
+#     :pets => [
+#     {
+#       :name => "Ruby",
+#       :species => "Dog"
+#     }
+#   ]
+# }
+# }
 
+
+    # p users
 ## Exercise C
 
 ### Given the following data structure:
@@ -162,6 +178,21 @@ united_kingdom = [
 ### Complete these tasks:
 
 # 1. Change the capital of Wales from `"Swansea"` to `"Cardiff"`.
-# 2. Create a Hash for Northern Ireland and add it to the `united_kingdom` array (The capital is Belfast, and the population is 1,811,000).
+united_kingdom[1][:capital] = "Swansea"
+# 2. Create a Hash for Northern Ireland and add it to the `united_kingdom` array (The capital is Belfast, and the population is ).
+united_kingdom.push(name: "Ireland",
+population:1811000 ,
+capital: "Belfast")
 # 3. Use a loop to print the names of all the countries in the UK.
+# for country in united_kingdom
+#   p country [:name]
+#
+#   end
+
 # 4. Use a loop to find the total population of the UK.
+total_pop = 0
+for pop in united_kingdom
+   total_pop = total_pop + united_kingdom[:population]
+
+end
+p total_pop
